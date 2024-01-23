@@ -47,18 +47,21 @@
   height: 100%;
   width: 100%;
   transition: 1s;
-
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  backdrop-filter: blur(3px);
-  background-color: rgba(128, 128, 128, 0.418);
 }
 #QRCode-Close {
   position: fixed;
   height: 100%;
   width: 100%;
   z-index: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(128, 128, 128, 0.082);
+}
+#QRCode-Close:active {
+  background-color: black;
 }
 .ADMIN-panel-content {
   display: flex;
@@ -67,13 +70,29 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
+  border-left: 5px double black;
+  border-bottom: 5px double black;
+  overflow-y: scroll;
+}
+.ADMIN-panel-content-OLDPeople-Pacientes {
+  padding-bottom: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.casilla {
+  width: 500px;
+}
+.ADMIN-panel-content-OLDPeople-title {
+  font-size: xx-large;
+  text-decoration: underline;
 }
 /* .ADMIN::after {
   content: "";
   position: fixed;
-   z-index: 10;
+  z-index: 10;
   height: 100%;
   width: 100%;
   top: 0;
