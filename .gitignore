@@ -2,3 +2,4 @@
 node_modules/
 /keys.json
 /.wwebjs_cache
+/.wwebjs_auth
