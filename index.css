@@ -2,9 +2,14 @@
   margin: 0;
   padding: 0;
 }
+#none {
+  display: none;
+}
 .ADMIN {
   height: 100%;
   width: 100%;
+  position: relative;
+  z-index: 0;
 }
 .ADMIN-panel {
   height: 100%;
@@ -15,12 +20,55 @@
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 5px double black;
+  position: relative;
 }
 .ADMIN-panel-header-access {
   display: flex;
-  position: relative;
+  border-left: 5px double black;
 }
 .ADMIN-panel-header-title {
-  font-size: 50px;
+  font-size: 70px;
   color: #333;
+  display: flex;
+  align-items: center;
 }
+.Login-button {
+  width: 100px;
+  height: 100px;
+}
+#QRCode {
+  position: relative;
+  height: 200px;
+  z-index: 10;
+}
+.ADMIN-panel-content-QR {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  transition: 1s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(128, 128, 128, 0.418);
+}
+#QRCode-Close {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+/* .ADMIN::after {
+  content: "";
+  position: fixed;
+   z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  backdrop-filter: blur(3px);
+  background: url(https://i.pinimg.com/736x/60/c1/4a/60c14a43fb4745795b3b358868517e79.jpg)
+    center no-repeat;
+  background-size: 30%;
+} */
