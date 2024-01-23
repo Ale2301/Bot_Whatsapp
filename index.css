@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 #none {
   display: none;
@@ -59,7 +60,16 @@
   width: 100%;
   z-index: 0;
 }
-
+.ADMIN-panel-content {
+  display: flex;
+}
+.ADMIN-panel-content-OLDPeople {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 /* .ADMIN::after {
   content: "";
   position: fixed;
