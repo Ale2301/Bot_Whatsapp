@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.ADMIN {
+  height: 100%;
+  width: 100%;
+}
+.ADMIN-panel {
+  height: 100%;
+  width: 100%;
+}
+.ADMIN-panel-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 5px double black;
+}
+.ADMIN-panel-header-access {
+  display: flex;
+  position: relative;
+}
+.ADMIN-panel-header-title {
+  font-size: 50px;
+  color: #333;
+}
