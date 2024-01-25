@@ -6,6 +6,10 @@
 #none {
   display: none;
 }
+button {
+  background-color: whitesmoke;
+  border: none;
+}
 .ADMIN {
   height: 100%;
   width: 100%;
@@ -25,7 +29,6 @@
 }
 .ADMIN-panel-header-access {
   display: flex;
-  border-left: 5px double black;
 }
 .ADMIN-panel-header-title {
   font-size: 70px;
@@ -36,6 +39,12 @@
 .Login-button {
   width: 100px;
   height: 100px;
+  border-left: 5px double black;
+  box-shadow: 0.9px 0.9px 0.9px 0.3px black;
+  background-color: whitesmoke;
+}
+.Login-button:active {
+  box-shadow: inset 2px 2px 0.9px 0.9px black;
 }
 #QRCode {
   position: relative;
@@ -63,8 +72,16 @@
 #QRCode-Close:active {
   background-color: black;
 }
+.ADMIN-panel-header-serch {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  margin: 10px;
+}
+
 .ADMIN-panel-content {
   display: flex;
+  flex-direction: row;
 }
 .ADMIN-panel-content-OLDPeople {
   height: 100%;
@@ -74,20 +91,53 @@
   align-items: center;
   border-left: 5px double black;
   border-bottom: 5px double black;
-  overflow-y: scroll;
+  border-top: 5px double black;
 }
 .ADMIN-panel-content-OLDPeople-Pacientes {
   padding-bottom: 10px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
+  column-gap: 100px;
+  row-gap: 20px;
+  border: 0.1px solid black;
 }
 .casilla {
-  width: 500px;
+  padding-top: 20px;
 }
-.ADMIN-panel-content-OLDPeople-title {
-  font-size: xx-large;
+.ADMIN-panel-content-title {
+  font-size: x-large;
   text-decoration: underline;
+  display: flex;
+}
+.send_true {
+  display: flex;
+  flex-direction: row;
+  color: green;
+}
+.send_true::after {
+  content: "";
+  background-image: url("./assets/check_circle.svg");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.send_false {
+  display: flex;
+  flex-direction: row;
+  color: red;
+}
+.send_false::after {
+  content: "";
+  background-image: url("./assets/uncheck_circle.svg");
+  background-size: contain;
+  width: 20px;
+  height: 20px;
+}
+.ADMIN-panel-content-NEWPeople {
+  width: 20%;
+  display: flex;
+  justify-content: center;
 }
 /* .ADMIN::after {
   content: "";

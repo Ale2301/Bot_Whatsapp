@@ -10,55 +10,162 @@
       <div class="ADMIN-panel-header">
         <div class="ADMIN-panel-header-title"><p>ADMIN PANEL</p></div>
         <div class="ADMIN-panel-header-access">
-          <div><button id="Login" class="Login-button">Login</button></div>
           <div>
-            <button id="Login-Close" class="Login-button">cerrar sesion</button>
+            <button id="Login" class="Login-button">
+              <p>Login</p>
+              <img src="./assets/login.svg" alt="Login" />
+            </button>
+          </div>
+          <div>
+            <button id="Login-Close" class="Login-button">
+              <p>cerrar sesion</p>
+              <img src="./assets/logout.svg" alt="logOUT" />
+            </button>
           </div>
         </div>
+      </div>
+      <div class="ADMIN-panel-header-serch">
+        <input type="text" placeholder="     Buscar Persona" />
+        <button>Buscar</button>
+        <img
+          src="href"
+          ="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+          alt=""
+        />
       </div>
       <div class="ADMIN-panel-content">
         <div class="ADMIN-panel-content-NEWPeople">
           <ul>
-            <div>añadir nueva persona</div>
+            <div class="ADMIN-panel-content-title">Añadir nueva persona</div>
             <li>
               <div><input type="text" placeholder="Nombre" /></div>
               <div><input type="text" placeholder="Numero" /></div>
               <div><input type="text" placeholder="Email" /></div>
-              <div><button>enviar</button></div>
+              <div><button>Cargar</button></div>
             </li>
           </ul>
         </div>
         <div class="ADMIN-panel-content-OLDPeople">
           <ul>
-            <div class="ADMIN-panel-content-OLDPeople-title">
-              Personas ya inscriptas
-            </div>
+            <div class="ADMIN-panel-content-title">Personas ya inscriptas</div>
             <li class="ADMIN-panel-content-OLDPeople-Pacientes">
               <div class="Pacientes-Name casilla">
                 <p><span>NOMBRE:</span>PEPE</p>
               </div>
-              <div class="Pacientes-Number casilla">
-                <p><span>NUMERO:</span>123</p>
-              </div>
               <div class="Pacientes-Email casilla">
                 <p><span>EMAIL:</span>@VERDADERO.com</p>
               </div>
+              <div class="Pacientes-Number casilla">
+                <p><span>NUMERO:</span>123</p>
+              </div>
               <div class="Pacientes-Send casilla">
-                <p><span>ENVIADO:</span>SI</p>
+                <p class="send_true"><span>ENVIADO:</span>SI</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000001</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
               </div>
             </li>
             <li class="ADMIN-panel-content-OLDPeople-Pacientes">
               <div class="Pacientes-Name casilla">
-                <p><span>NOMBRE:</span>Rocio</p>
+                <p><span>NOMBRE:</span>Rosa</p>
+              </div>
+              <div class="Pacientes-Email casilla">
+                <p><span>EMAIL:</span>@VERDADERO.com</p>
               </div>
               <div class="Pacientes-Number casilla">
                 <p><span>NUMERO:</span>321</p>
               </div>
+              <div class="Pacientes-Send casilla">
+                <p class="send_false"><span>ENVIADO:</span>NO</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000002</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
+              </div>
+            </li>
+            <li class="ADMIN-panel-content-OLDPeople-Pacientes">
+              <div class="Pacientes-Name casilla">
+                <p><span>NOMBRE:</span>Reginaldo</p>
+              </div>
               <div class="Pacientes-Email casilla">
-                <p><span>EMAIL:</span>@realmentVERDADERO.com</p>
+                <p><span>EMAIL:</span>@VERDADERO2.com</p>
+              </div>
+              <div class="Pacientes-Number casilla">
+                <p><span>NUMERO:</span>889</p>
               </div>
               <div class="Pacientes-Send casilla">
-                <p><span>ENVIADO:</span>NO</p>
+                <p class="send_true"><span>ENVIADO:</span>SI</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000003</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
+              </div>
+            </li>
+            <li class="ADMIN-panel-content-OLDPeople-Pacientes">
+              <div class="Pacientes-Name casilla">
+                <p><span>NOMBRE:</span>Padre santo</p>
+              </div>
+              <div class="Pacientes-Email casilla">
+                <p><span>EMAIL:</span>@VERDADEROsanticimo.com</p>
+              </div>
+              <div class="Pacientes-Number casilla">
+                <p><span>NUMERO:</span>417</p>
+              </div>
+              <div class="Pacientes-Send casilla">
+                <p class="send_false"><span>ENVIADO:</span>NO</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000004</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
+              </div>
+            </li>
+            <li class="ADMIN-panel-content-OLDPeople-Pacientes">
+              <div class="Pacientes-Name casilla">
+                <p><span>NOMBRE:</span>Leticia</p>
+              </div>
+              <div class="Pacientes-Email casilla">
+                <p><span>EMAIL:</span>@VERDADEROleti.com</p>
+              </div>
+              <div class="Pacientes-Number casilla">
+                <p><span>NUMERO:</span>173</p>
+              </div>
+              <div class="Pacientes-Send casilla">
+                <p class="send_true"><span>ENVIADO:</span>SI</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000005</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
+              </div>
+            </li>
+            <li class="ADMIN-panel-content-OLDPeople-Pacientes">
+              <div class="Pacientes-Name casilla">
+                <p><span>NOMBRE:</span>Tita</p>
+              </div>
+              <div class="Pacientes-Email casilla">
+                <p><span>EMAIL:</span>@VERDADEROritalin.com</p>
+              </div>
+              <div class="Pacientes-Number casilla">
+                <p><span>NUMERO:</span>129</p>
+              </div>
+              <div class="Pacientes-Send casilla">
+                <p class="send_true"><span>ENVIADO:</span>SI</p>
+              </div>
+              <div class="casilla">
+                <p><span>ID:</span>0000006</p>
+              </div>
+              <div class="casilla">
+                <button>Editar</button>
               </div>
             </li>
           </ul>
@@ -78,3 +185,11 @@
     </div>
   </body>
 </html>
+<!-- espacio para anotaciones
+pienso que a la app le faltan estas opciones
+opcion para filtrar entre quienes estan enviados y quienes no
+opcion para editar un usuario ya creado
+pienso que para poder editar se deberia de usar un numero identificador a cada usuario para poder encontrarlo por el y poder editarlo 
+
+
+-->
