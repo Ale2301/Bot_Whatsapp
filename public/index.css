@@ -105,6 +105,11 @@ button {
 .casilla {
   padding-top: 20px;
 }
+.casilla-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .ADMIN-panel-content-title {
   font-size: x-large;
   text-decoration: underline;
