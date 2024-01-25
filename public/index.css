@@ -99,8 +99,6 @@ button {
   flex-direction: row;
 }
 .ADMIN-panel-content-OLDPeople {
-  height: 100%;
-  width: 100%;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -158,6 +156,12 @@ button {
   width: 20%;
   display: flex;
   justify-content: center;
+  position: fixed;
+}
+.ADMIN-panel-content-NEWPeople-space {
+  position: relative;
+  top: 0;
+  width: 20%;
 }
 /* .ADMIN::after {
   content: "";
