@@ -20,12 +20,24 @@ button {
   height: 100%;
   width: 100%;
 }
+.ADMIN-panel-header-space {
+  position: relative;
+  top: 0;
+  height: 100px;
+  width: 100%;
+  margin-bottom: 30px;
+  z-index: 0;
+}
 .ADMIN-panel-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 5px double black;
-  position: relative;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  backdrop-filter: blur(4px);
 }
 .ADMIN-panel-header-access {
   display: flex;
@@ -74,11 +86,14 @@ button {
 }
 .ADMIN-panel-header-serch {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  height: 50px;
-  margin: 10px;
+  align-items: center;
 }
-
+.ADMIN-panel-header-serch-input {
+  width: 300px;
+  height: 50px;
+}
 .ADMIN-panel-content {
   display: flex;
   flex-direction: row;
