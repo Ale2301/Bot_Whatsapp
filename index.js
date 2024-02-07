@@ -36,7 +36,12 @@ async function goToSheet() {
     const rawData = await accessGoogleSheet();
     const formattedData = await formatData(rawData);
     formattedData.forEach((data) => {
-      sendWhatsappMessage(data.Number, data.Link);
+      sendWhatsappMessage(
+        data.Number,
+        data.Link,
+        data.Username,
+        data.Referencia
+      );
     });
   } catch (error) {
     console.error("Error al obtener y formatear los datos:", error);
@@ -63,7 +68,6 @@ async function accessGoogleSheet() {
 
 async function formatData(rawData) {
   await accessGoogleSheet();
-
   const header = rawData[0];
   const formattedData = rawData.slice(1).map((responseData) => {
     return Object.fromEntries(
@@ -73,13 +77,15 @@ async function formatData(rawData) {
   return formattedData;
 }
 
-async function sendWhatsappMessage(number, link) {
+async function sendWhatsappMessage(number, link, nombre, referente) {
   try {
     const chat = await client.getChatById(`${number}@c.us`);
-    await chat.sendMessage(link);
-    console.log(`Mensaje enviado a ${number}: ${link}`);
+    const message = `Hola ${nombre} soy un bot de prueba de ${referente}, 
+    por favor no me reportes, toma un link para comprobar que funciono :3 ${link}`;
+    await chat.sendMessage(message);
+    console.log(`Mensaje enviado a ${nombre} exitosamente`);
   } catch (error) {
-    console.error(`Error al enviar mensaje a ${number}:`, error);
+    console.error(`Error al enviar mensaje a ${nombre}:`, error);
   }
 }
 
@@ -89,7 +95,7 @@ client.on("qr", (qr) => {
 
 client.on("ready", () => {
   console.log("Cliente de WhatsApp listo");
-  //goToSheet();
+  goToSheet();
 });
 
 client.initialize();
