@@ -40,7 +40,8 @@ async function goToSheet() {
         data.Number,
         data.Link,
         data.Username,
-        data.Referencia
+        data.Referencia,
+        data.Verificado
       );
     });
   } catch (error) {
@@ -77,17 +78,54 @@ async function formatData(rawData) {
   return formattedData;
 }
 
-async function sendWhatsappMessage(number, link, nombre, referente) {
-  try {
+const pendingMessages = [];
+async function sendWhatsappMessage(
+  number,
+  link,
+  nombre,
+  referente,
+  estaVerificado
+) {
+  loopMessage: try {
     const chat = await client.getChatById(`${number}@c.us`);
+    if (estaVerificado === "NO") {
+      console.log("pusheando el numero " + number + "@c.us");
+      pendingMessages.push([number + "@c.us", link, nombre, referente]);
+      await chat.sendMessage(
+        "Tu número no esta verificado, envía un mensaje para recibir tu documento (Soy un bot de prueba de " +
+          referente +
+          " no me reportes :3)"
+      );
+      break loopMessage;
+    }
     const message = `Hola ${nombre} soy un bot de prueba de ${referente}, 
-    por favor no me reportes, toma un link para comprobar que funciono :3 ${link}`;
+    por favor no me reportes, toma un link para comprobar que funciono :3    ${link}`;
     await chat.sendMessage(message);
     console.log(`Mensaje enviado a ${nombre} exitosamente`);
   } catch (error) {
     console.error(`Error al enviar mensaje a ${nombre}:`, error);
   }
 }
+
+client.on("message", async (msg) => {
+  const number = msg.from;
+  console.log(number);
+  let index = pendingMessages.findIndex((item) => item[0] === number);
+  if (index >= 0) {
+    let [number, link, nombre, referente] = pendingMessages[index];
+    const message = `Hola ${nombre} soy un bot de prueba de ${referente}, 
+    por favor no me reportes, toma un link para comprobar que funciono :3   ${link}`;
+    try {
+      const chat = await client.getChatById(number);
+      await chat.sendMessage(message);
+      console.log(`Mensaje enviado a ${nombre} exitosamente`);
+      pendingMessages.splice(index, 1);
+      //Acá iría la lógica de escribir el número como verificado, dejar de hacerle check a ese número, etc
+    } catch (e) {
+      console.error("error al enviar el mensaje:", e);
+    }
+  }
+});
 
 client.on("qr", (qr) => {
   qrcode.generate(qr, { small: true });
